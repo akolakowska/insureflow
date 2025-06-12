@@ -241,7 +241,7 @@ Please arrange for a survey at your earliest convenience.'
     'Industrial Insurance',
     '2024-04-21',
     'rank',
-    'reject',
+    'rejected',
     'Property',
     NULL,
     '100 Chemical Way, Liverpool, L1 1EF',

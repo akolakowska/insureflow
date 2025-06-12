@@ -16,7 +16,7 @@ SELECT
     SUM(CASE WHEN status = 'processing' AND stage = 'enrichment' THEN 1 ELSE 0 END) as in_progress_submissions,
     SUM(CASE WHEN status = 'proceed' THEN 1 ELSE 0 END) as proceed_to_quote,
     SUM(CASE WHEN status = 'survey' THEN 1 ELSE 0 END) as survey_recommended,
-    SUM(CASE WHEN status = 'reject' THEN 1 ELSE 0 END) as rejected
+    SUM(CASE WHEN status = 'rejected' THEN 1 ELSE 0 END) as rejected
 FROM submissions;
 
 -- Workflow distribution view
@@ -83,7 +83,7 @@ SELECT
     END as overall_score
 FROM submissions s
 LEFT JOIN guideline_checks g ON s.id = g."submissionId"
-WHERE s.stage = 'rank' OR s.status IN ('proceed', 'survey', 'reject')
+WHERE s.stage = 'rank' OR s.status IN ('proceed', 'survey', 'rejected')
 GROUP BY s.id
 ORDER BY s."submissionDate" DESC;
 

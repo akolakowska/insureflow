@@ -12,7 +12,7 @@ BEGIN
     FROM submissions
     WHERE id = submission_id;
     
-    IF current_status = 'rejected' OR current_status = 'reject' THEN
+    IF current_status = 'rejected' THEN
         RETURN 0;
     END IF;
     

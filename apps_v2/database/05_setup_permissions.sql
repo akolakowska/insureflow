@@ -3,11 +3,11 @@
 
 -- Create application user (replace with your actual application user)
 -- Note: You may need to run this as a superuser
--- CREATE USER insurance_app WITH PASSWORD 'your_secure_password_here';
+CREATE USER insurance_app WITH PASSWORD 'insure-flow-123';
 
 -- Grant necessary permissions to the application user
--- GRANT CONNECT ON DATABASE your_database_name TO insurance_app;
--- GRANT USAGE ON SCHEMA public TO insurance_app;
+GRANT CONNECT ON DATABASE postgres TO insurance_app;
+GRANT USAGE ON SCHEMA public TO insurance_app;
 
 -- Grant table permissions
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO insurance_app;
